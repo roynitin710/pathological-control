@@ -31,8 +31,7 @@ class LoginWindow:
         label.place(x=0, y=0, relwidth=1, relheight=1)
 
         # heading
-        label = Label(self.root, text="Sanar-Vibra Hospital", bg='#000000',
-                      fg='#ff0000')  # Sanar Vibra (means: Heal vibe in english)
+        label = Label(self.root, text="Sanar-Vibra Hospital", bg='#000000', fg='#ff0000')  # Sanar Vibra (means: Heal vibe in english)
         label.place(x=455, y=65)
         label.configure(font=("Times New Roman", 30, "bold italic"))
 
@@ -55,8 +54,7 @@ class LoginWindow:
 
     def login(self, user):  # 1)user 0: ∞ clearance  2)user 1: level 1 clearance 3) user 2: level 2 clearance
         # adding text to the screen
-        def create_label(text="Blank", x=0, y=0, fg='#ffff00', bg='#000000', font_style="Times New Roman",
-                         font_size=20, font_type="bold"):
+        def create_label(text="Blank", x=0, y=0, fg='#ffff00', bg='#000000', font_style="Times New Roman", font_size=20, font_type="bold"):
             label = Label(self.frame, text=text, bg=bg, fg=fg)
             label.place(x=x, y=y)
             label.configure(font=(font_style, font_size, font_type))
@@ -92,8 +90,7 @@ class LoginWindow:
         if user != 0:
             self.username = self.input_field(x=55, y=210)
         else:
-            create_label(text="Admin                                           ", x=55, y=210, fg='#8b0000',
-                         bg='#ffffff', font_size=12, font_style="underline")
+            create_label(text="Admin                                           ", x=55, y=210, fg='#8b0000', bg='#ffffff', font_size=12, font_style="underline")
             username = "admin"
 
         # password
@@ -106,30 +103,23 @@ class LoginWindow:
         self.password = self.input_field(x=55, y=270)
 
         # login
-        log_in = Button(self.frame, text="Log In", bd=3, relief=RIDGE, bg='#050542', fg='#f6f0f0', cursor='hand2',
-                        activebackground='#050542', activeforeground='#f6f0f0',
-                        command=lambda: self.perform_login(user))
+        log_in = Button(self.frame, text="Log In", bd=3, relief=RIDGE, bg='#050542', fg='#f6f0f0', cursor='hand2', activebackground='#050542', activeforeground='#f6f0f0', command=lambda: self.perform_login(user))
         log_in.place(x=97, y=310, width=160, height=30)
         log_in.configure(font=("Times New Roman", 10, "bold"))
 
         # divider
-        create_label(text="                                                         ", x=55, y=340, fg='#808080',
-                     bg='#000000', font_style="arial", font_size=10, font_type="underline")
+        create_label(text="                                                         ", x=55, y=340, fg='#808080', bg='#000000', font_style="arial", font_size=10, font_type="underline")
 
         if user == 0:
             create_label(text="Password", x=80, y=240, fg='#ffffff', bg='#000000', font_size=15)
         elif user == 1:
             # forgot password
-            forgot_password = Button(self.frame, text="Forgot password?", bd=0, bg='#000000', fg='#0000ff',
-                                     cursor='hand2', activebackground='#000000', activeforeground='#ff000f',
-                                     command=lambda: self.registration())
+            forgot_password = Button(self.frame, text="Forgot password?", bd=0, bg='#000000', fg='#0000ff', cursor='hand2', activebackground='#000000', activeforeground='#ff000f', command=lambda: self.registration())
             forgot_password.place(x=97, y=360, width=160, height=30)
             forgot_password.configure(font=("Times New Roman", 10, "bold"))
 
             # register for new user
-            register = Button(self.frame, text="Create New Account", bd=0, bg='#000000', fg='#0000ff',
-                              cursor='hand2', activebackground='#000000', activeforeground='#ff000f',
-                              command=lambda: self.registration())
+            register = Button(self.frame, text="Create New Account", bd=0, bg='#000000', fg='#0000ff', cursor='hand2', activebackground='#000000', activeforeground='#ff000f', command=lambda: self.registration())
             register.place(x=97, y=390, width=160)
             register.configure(font=("Times New Roman", 10, "bold"))
 
